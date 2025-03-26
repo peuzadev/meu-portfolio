@@ -1,0 +1,187 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #D9D9D9;
+    background-color: #0F172B;
+    margin: 0;
+    padding: 0;
+}
+
+#github-logo {
+    margin-right: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 1px 1px 5px rgba(47, 137, 179, 0.986);
+    width: 40px;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+#github-logo:hover {
+    transform: scale(1.1);
+}
+
+nav a {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav {
+    display: flex;
+    gap: 35px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0F172B;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    box-shadow: 2px 1px 6px #45556C;
+    border-radius: 25px;
+    width: 40%;
+    height: 60px;
+}
+
+#meu-nome {
+    margin-left: 30px;
+    font-size: 15px;
+    color: #D9D9D9;
+}
+
+#soft-skills,
+#hard-skills,
+#projetos {
+    transition: font-size 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+#soft-skills:hover,
+#hard-skills:hover,
+#projetos:hover {
+    font-size: 12px;
+}
+
+h2 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.138);
+    background: linear-gradient(90deg, oklch(0.293 0.066 243.157), oklch(0.5 0.134 242.749));
+    -webkit-background-clip: text; /* DEGRADE */
+    -webkit-text-fill-color: transparent; /* PARA APLICAR O DEGRADE */
+    animation: pulse-shadow 2s infinite alternate; /* PARA APLICAR ANIMAÇÃO */
+    margin-left: 0px;
+    font-size: 50px;
+}
+
+#sobre-mim {
+    align-items: center;
+    padding: 30px;
+}
+
+#sobre-mim-texto {
+    font-size: 24px;
+    margin-bottom: -50px;
+    margin-right: 300px;
+}
+
+.sobre-mim-container {
+    display: flex;
+    margin-top: -200px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#fundo-minha-imagem {
+    opacity: 60%;
+    border-radius: 10%;
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(-1px 0px 15px rgb(0, 0, 0));
+    width: 400px;
+    margin-top: -450px;
+    margin-left: 1100px;
+    margin-right: -400px;
+    margin-bottom: -20px;
+    z-index: 1;
+}
+
+#minha-imagem {
+    border-radius: 10%;
+    max-width: 40%;
+    height: auto;
+    filter: drop-shadow(-1px 0px 15px rgb(0, 0, 0));
+    width: 400px;
+    margin-top: -199px;
+    margin-left: 200px;
+    margin-right: -50px;
+    margin-bottom: -38px;
+    z-index: 2;
+}
+
+hr {
+    border: none;
+    height: 4px;
+    margin: 9.9px 0;
+    background-color: #1D293D;
+}
+
+.whatsapp-button-border {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #0891b2;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border: 4px solid transparent; /* Define uma borda invisível */
+    border-radius: 25px; /* Borda arredondada */
+    background-clip: padding-box; /* Garante que o fundo não se sobreponha à borda */
+    border-image: linear-gradient(to right, #155e75, #3d3cba, #8455d1) 1; /* Degradê na borda */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsapp-button-border:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-button-border:active {
+    transform: scale(0.95);
+}
+
+/* APENAS EFEITOS */
+
+/* Animação Fade In Sequencial */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+.fade-in-delay-1 {
+    animation-delay: 0.2s;
+}
+
+.fade-in-delay-2 {
+    animation-delay: 0.4s;
+}
+
+.fade-in-delay-3 {
+    animation-delay: 0.6s;
+}
+
+.fade-in-delay-4 {
+    animation-delay: 0.8s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse-shadow {
+    0% {
+        text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    }
+    50% {
+        text-shadow: 0px 8px 30px rgba(0, 0, 0, 0.836);
+    }
+    100% {
+        text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    }
+}
