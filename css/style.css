@@ -1,10 +1,83 @@
+
+/* rolagem suave */
+html {
+    scroll-behavior: smooth;
+}
+
+
 body {
+    overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
     color: #D9D9D9;
     background-color: #0F172B;
     margin: 0;
     padding: 0;
 }
+
+
+
+
+/* Blur */
+body::before {
+    content: "";
+    position: absolute;
+    bottom: -1000px;
+    top: -50px;
+    left: 80%;
+    width: 80vw;
+    height: 50vh;
+    background: radial-gradient(circle, rgba(2, 132, 199, 0.4), rgba(23, 37, 84, 0.1));
+    filter: blur(100px);
+    transform: translateX(-50%);
+    z-index: -1;
+    pointer-events: none;
+}
+ 
+
+/* Menu */
+
+
+nav a {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav {
+    display: flex;
+    gap: 35px;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(circle, rgba(2, 132, 199, 0.4), rgba(23, 37, 84, 0.1));
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 150px;
+    box-shadow: 2px 1px 6px #45556C;
+    border-radius: 25px;
+    width: 40%;
+    height: 60px;
+}
+
+    /* #meu-nome {
+        margin-left: 30px;
+        font-size: 15px;
+        color: #D9D9D9;
+    } */
+
+
+#soft-skills,
+#hard-skills,
+#projetos {
+    margin-left: 65px;
+    transition: font-size 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+#soft-skills:hover,
+#hard-skills:hover,
+#projetos:hover {
+    font-size: 12px;
+}
+
 
 #github-logo {
     margin-right: 30px;
@@ -20,66 +93,23 @@ body {
     transform: scale(1.1);
 }
 
-nav a {
-    text-decoration: none;
-    color: inherit;
-}
-
-nav {
-    display: flex;
-    gap: 35px;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #0F172B;
-    margin-top: 20px;
-    margin-right: auto;
-    margin-left: auto;
-    box-shadow: 2px 1px 6px #45556C;
-    border-radius: 25px;
-    width: 40%;
-    height: 60px;
-}
-
-#meu-nome {
-    margin-left: 30px;
-    font-size: 15px;
-    color: #D9D9D9;
-}
-
-#minhas-soft-skills p {
-font-size: 25px;
-}
-
-#minhas-soft-skills h2 {
-    font-size: 60px;
-    }
-    
-
-
-
-
-
-
-#soft-skills,
-#hard-skills,
-#projetos {
-    transition: font-size 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-#soft-skills:hover,
-#hard-skills:hover,
-#projetos:hover {
-    font-size: 12px;
-}
-
-h2 {
+/* Primeira seção */
+#sobre-mim h2 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.138);
     background: linear-gradient(90deg, oklch(0.293 0.066 243.157), oklch(0.5 0.134 242.749));
-    -webkit-background-clip: text; /* DEGRADE */
+    -webkit-background-clip: text; 
     -webkit-text-fill-color: transparent; /* PARA APLICAR O DEGRADE */
-    animation: pulse-shadow 2s infinite alternate; /* PARA APLICAR ANIMAÇÃO */
+    animation: pulse-shadow 4s infinite alternate; /* PARA APLICAR ANIMAÇÃO */
     margin-left: 0px;
     font-size: 50px;
+}
+
+.fullstack {
+    background: linear-gradient(90deg, #172554, #0284c7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: degrade-animado 6s infinite alternate;
+    background-size: 200% 200%;
 }
 
 #sobre-mim {
@@ -88,6 +118,11 @@ h2 {
 }
 
 #sobre-mim-texto {
+    background: linear-gradient(90deg, #3730a3, #60a5fa, #3730a3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    animation: degrade-movendo 3s infinite alternate ease-in-out;
     font-size: 24px;
     margin-bottom: -50px;
     margin-right: 300px;
@@ -100,39 +135,27 @@ h2 {
     align-items: center;
 }
 
-#fundo-minha-imagem {
-    opacity: 60%;
-    border-radius: 30%;
-    max-width: 100%;
-    height: auto;
-    filter: drop-shadow(-1px 0px 15px rgb(0, 0, 0));
-    width: 400px;
-    margin-top: -700px;
-    margin-left: 1140px;
-    margin-bottom: -25px;
-    z-index: 1;
-}
-
+/* Imagem */
 #minha-imagem {
-    border-radius: 10%;
-    max-width: 40%;
+    border-radius: 50%;
+    max-width: 35%;
     height: auto;
     filter: drop-shadow(-1px 0px 15px rgb(0, 0, 0));
     width: 800px;
-    margin-top: -199px;
+    margin-top: -220px;
     margin-left: 200px;
     margin-right: -50px;
-    margin-bottom: -38px;
+    margin-bottom: -15px;
     z-index: 2;
 }
-
+/* Linha */
 hr {
     border: none;
     height: 4px;
 margin-top: -60px;
     background-color: #1D293D;
 }
-
+/* Botão entre em contato */
 .whatsapp-button-border {
     position: relative;
     top: -100px;
@@ -143,21 +166,88 @@ margin-top: -60px;
     font-size: 16px;
     font-weight: bold;
     text-decoration: none;
-    border: 4px solid transparent; /* Define uma borda invisível */
-    border-radius: 25px; /* Borda arredondada */
-    background-clip: padding-box; /* Garante que o fundo não se sobreponha à borda */
-    border-image: linear-gradient(to right, #155e75, #3d3cba, #8455d1) 1; /* Degradê na borda */
+    border: 4px solid transparent;
+    background-clip: padding-box;
+    border-image: linear-gradient(to right, #155e75, #3d3cba, #8455d1) 1;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .whatsapp-button-border:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 
+        0 0 10px 3px rgba(21, 94, 117, 0.4),   /* Sombra azul mais clara */
+        0 0 15px 5px rgba(61, 60, 186, 0.3),    /* Sombra roxa */
+        0 0 20px 8px rgba(132, 85, 209, 0.2);    /* Sombra mais suave */
 }
 
 .whatsapp-button-border:active {
     transform: scale(0.95);
 }
+
+
+/* Segunda seção */
+#minhas-soft-skills h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    background: linear-gradient(90deg, #172554, #0284c7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    font-size: 50px;
+    margin-left: 25px;
+    animation: degrade-animado 6s infinite alternate, pulse-shadow 4s infinite alternate;
+    }
+
+
+    .card-pai {
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap; 
+        gap: 10px; /* Espaçamento entre os cards */
+        max-width: 100%;
+    }
+    
+    .card {
+        background: transparent;
+        border: 2px solid rgba(2, 132, 199, 0.3);
+        border-radius: 30px;
+        width: 300px;
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+        padding: 50px;
+        padding-bottom: 35px;
+    }
+    
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+        border: 2px solid rgb(2, 133, 199);
+        
+    }
+    
+    
+    .card h3 {
+        background: linear-gradient(90deg, #3730a3, #60a5fa, #3730a3);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: degrade-animado 6s infinite alternate, pulse-shadow 4s infinite alternate;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    
+    .card p {
+        animation: degrade-animado 2s infinite alternate;
+        font-size: 14px;
+        line-height: 1.6;
+        text-align: center;
+    }
+    
+    
+
+    
+
 
 /* APENAS EFEITOS */
 
@@ -198,5 +288,23 @@ margin-top: -60px;
     }
     100% {
         text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    }
+}
+
+@keyframes degrade-animado {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes degrade-movendo {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
     }
 }
