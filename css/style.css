@@ -72,16 +72,35 @@ nav {
 #soft-skills,
 #hard-skills,
 #projetos {
-    margin-left: 5px;
-    transition: font-size 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+    font-size: 15px;
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 300;
+    transition: color 0.3s ease;
+    }
+
+#soft-skills::after,
+#hard-skills::after,
+#projetos::after {
+    content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1.8px;
+  background-color: #0f7598;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
 }
 
-#soft-skills:hover,
-#hard-skills:hover,
-#projetos:hover {
-    font-size: 12px;
+#soft-skills:hover::after,
+#hard-skills:hover::after,
+#projetos:hover::after {
+  transform: scaleX(1);
 }
-
 
 #github-logo {
     margin-right: 30px;
@@ -268,37 +287,74 @@ margin-top: -60px;
         animation: degrade-animado 6s infinite alternate, pulse-shadow 4s infinite alternate;
 }
 
-    .card-pai2 {
-        margin-bottom: 20px;
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap; 
-        gap: 10px; /* Espaçamento entre os cards */
-        max-width: 100%;
-    }
+
+#card-pai2 {
+    display: flex;
+    justify-content: space-around; /* Alinha os cards horizontalmente */
+    flex-wrap: wrap; /* Permite que os cards se movam para a próxima linha, se necessário */
+    gap: 10px; /* Espaçamento entre os cards */
+    max-width: 100%;
+    padding: 0 20px; /* Adiciona algum preenchimento nas laterais */
+    box-sizing: border-box;
+}
+
+.card2 {
     
-    .card2 {
-        background: transparent;
-        border: 2px solid rgba(2, 132, 199, 0.3);
-        border-radius: 30px;
-        width: 300px;
-        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-        padding: 50px;
-        padding-bottom: 35px;
-    }
-    
-    .card2:hover {
-        transform: scale(1.05);
-        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
-        border: 2px solid rgb(2, 133, 199);
-        
-    }
+    background: transparent;
+    border: 2px solid rgba(2, 132, 199, 0.3);
+    border-radius: 30px;
+    width: 250px; /* Largura fixa para cada card */
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    padding: 50px;
+    padding-bottom: 35px;
+    text-align: center; /* Centraliza o conteúdo dentro do card */
+    flex-shrink: 0; /* Evita que o card encolha */
+}
+
+.card2 i {
+    color: #027A7A; /* Cor do ícone */
+    margin-bottom: 20px; /* Espaçamento entre o ícone e o título */
+}
+
+.card2 h3 {
+    margin: 10px 0;
+    font-size: 1.5em;
+    text-align: center;
+        text-shadow: 2px 2px 4px rgb(0, 0, 0);
+        background: linear-gradient(90deg, #172554, #0284c7);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 1.5em;
+        animation: degrade-animado 6s infinite alternate, pulse-shadow 4s infinite alternate;
+}
+
+.card2 p {
+    font-size: 1em;
+    background: linear-gradient(90deg, #3730a3, #60a5fa, #3730a3);
+    margin: 10px 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: degrade-animado 6s infinite alternate, pulse-shadow 4s infinite alternate;
+}
+
+.card2:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgb(2, 133, 199);
+}
+.card2 img {
+    width: 55px;
+    margin-bottom: 30px; 
+}
+
+
+
     
     
     #meus-projetos h2 { 
         text-align: center;
-        margin-bottom: 50px;
+        margin-bottom: -120px;
         text-shadow: 2px 2px 4px rgb(0, 0, 0);
         background: linear-gradient(90deg, #172554, #0284c7);
         -webkit-background-clip: text;
@@ -309,12 +365,89 @@ margin-top: -60px;
         animation: degrade-animado 6s infinite alternate, pulse-shadow 4s infinite alternate;
 }
 
+#meus-projetos {
+    text-align: center;
+  }
+  
+  .slider {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .slider-track {
+    display: flex;
+    transition: transform 1s ease-in-out;
+
+  }
+  
+  .card3 {
+    flex: 0 0 auto;
+    display: flex;
+    width: 80vw;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    
+  }
+  
+  .card3 img {
+    width: 80%;
+    height: 80%x;
+    object-fit: contain;
+  }
+  
+  /* Estilo das setinhas */
+  .nav-buttons {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  
+  button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .card3 img {
+      height: 200px;
+    }
+  }
+  
+
     
 
 
 /* APENAS EFEITOS */
 
 /* Animação Fade In Sequencial */
+@keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
 .fade-in {
     opacity: 0;
     animation: fadeIn 2s forwards;
@@ -436,3 +569,4 @@ width: 800px;
     gap: 30px;
 }
 }
+

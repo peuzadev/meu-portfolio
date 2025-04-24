@@ -7,10 +7,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="js/script.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Portfólio 1</title>
 </head>
 <body>
+    
     <!-- <img class="vetor-1" id="vetor-1" src="img/vetor-1.png"> -->
     <nav class="fade-in fade-in-delay-1">
         <h1 id="meu-nome">Pedro Henrique</h1>
@@ -55,36 +56,57 @@
     <hr class="soft-skills-hr">
     <section id="minhas-hard-skills">
         <h2>Hard Skills</h2>
-        <div class="card-pai2">
-            <div src = "img/" class ="card2">
-                <h3></h3>
-            </div>
-            <div src = "img/" class ="card2">
-                <h3></h3>
-            </div>
-            <div src = "img/" class ="card2">
-                <h3></h3>
-            </div>
+        <div id="card-pai2">
+        <div class="card2">
+            <i class="fab fa-js-square fa-3x"></i> <!-- Ícone de JavaScript -->
+            <h3>JavaScript</h3>
+            <p>Desenvolvimento de aplicações dinâmicas com JavaScript, proporcionando interatividade e recursos avançados para websites e aplicativos. Facilita a construção de soluções escaláveis e modernas.</p>
+        </div>
+        <div class="card2">
+            <i class="fab fa-node fa-3x"></i> <!-- Ícone de Node.js -->
+            <h3>Node.js</h3>
+            <p>Desenvolvimento de APIs e servidores com Node.js, utilizando JavaScript no back-end para aplicações rápidas e escaláveis. Ideal para construção de sistemas em tempo real.</p>
+        </div>
+        <div class="card2">
+            <i class="fab fa-js-square fa-3x"></i> <!-- Ícone de TypeScript -->
+            <h3>TypeScript</h3>
+            <p>Desenvolvimento de sistemas com TypeScript, aumentando a robustez e segurança do código. Com tipagem estática, ajuda a evitar erros e melhora a manutenção de grandes projetos.</p>
+        </div>
+        <div class="card2">
+            <img src="img/pngwing.com.png" class="tailwind-logo" alt="Tailwind CSS Logo" /> <!-- Logo do Tailwind -->
+            <h3>Tailwind CSS</h3>
+            <p>Estilização rápida e responsiva utilizando o Tailwind CSS. Com Tailwind, você pode criar layouts modernos e responsivos sem a necessidade de escrever CSS customizado para cada elemento.</p>
+        </div>
+        <div class="card2">
+            <i class="fab fa-css3-alt fa-3x"></i> <!-- Ícone de CSS -->
+            <h3>CSS</h3>
+            <p>Criação de layouts e animações com CSS, melhorando a experiência do usuário com transições suaves e responsividade, criando designs modernos e fluidos.</p>
+        </div>
         </div>
         <hr class="hard-skills">
 
     </section>
     <section id="meus-projetos">
         <h2>Projetos</h2>
-        <div class="card-pai2">
-            <div src = "img/" class ="card2">
-                <h3></h3>
+        <div class="slider">
+          <div class="slider-track">
+            <div class="card3">
+              <img src="img/projeto1.png" alt="Projeto 1" />
             </div>
-            <div src = "img/" class ="card2">
-                <h3></h3>
+            <div class="card3">
+              <img src="img/projeto3.png" alt="Projeto 2" />
             </div>
-            <div src = "img/" class ="card2">
-                <h3></h3>
+            <div class="card3">
+              <img src="img/projeto2.png" alt="Projeto 3" />
             </div>
-
-
-
-
-    </section>
+          </div>
+          <div class="nav-buttons">
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+          </div>
+        </div>
+      </section>
+    
+    <script src="js/script.js"></script>
 </body>
 </html>
