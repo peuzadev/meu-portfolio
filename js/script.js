@@ -11,7 +11,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             const startPosition = window.pageYOffset;
             const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
             const distance = targetPosition - startPosition;
-            const duration = 600; 
+            const duration = 100; 
             let startTime = null;
 
             function animation(currentTime) {

@@ -349,9 +349,44 @@ margin-top: -60px;
 }
 
 
+.ver-projeto {
+    position: relative;
+    display: inline-block;
+    padding: 10px 10px;
+    margin-top: 10px;
+    background-color: transparent;
+    color: #0891b2;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border: 4px solid transparent;
+    background-clip: padding-box;
+    border-image: linear-gradient(to right, #155e75, #3d3cba, #8455d1) 1;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
+.ver-projeto:hover {
+    transform: scale(1.05);
+    box-shadow: 
+        0 0 10px 3px rgba(21, 94, 117, 0.4),   /* Sombra azul mais clara */
+        0 0 15px 5px rgba(61, 60, 186, 0.3),    /* Sombra roxa */
+        0 0 20px 8px rgba(132, 85, 209, 0.2);    /* Sombra mais suave */
+}
+
+.ver-projeto:active {
+    transform: scale(0.95);
+}
     
-    
+    .button {
+        text-shadow: 2px 2px 4px rgb(0, 0, 0);
+        background: linear-gradient(90deg, #172554, #0284c7);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 200% 200%;
+        font-size: 25px;
+        animation: degrade-animado 6s infinite alternate, pulse-shadow 4s infinite alternate;
+       
+    }
     #meus-projetos h2 { 
         text-align: center;
         margin-bottom: -120px;
@@ -370,72 +405,21 @@ margin-top: -60px;
   }
   
   .slider {
-    position: relative;
-    width: 80%;
-    margin: 0 auto;
-    overflow: hidden;
-  }
-  
-  .slider-track {
     display: flex;
-    transition: transform 1s ease-in-out;
-
-  }
-  
-  .card3 {
-    flex: 0 0 auto;
-    display: flex;
-    width: 80vw;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    
-  }
-  
-  .card3 img {
-    width: 80%;
-    height: 80%x;
-    object-fit: contain;
-  }
-  
-  /* Estilo das setinhas */
-  .nav-buttons {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
+    justify-content: space-around; /* Alinha os cards horizontalmente */
+    flex-wrap: wrap; /* Permite que os cards se movam para a próxima linha, se necessário */
+    gap: 10px; /* Espaçamento entre os cards */
+    max-width: 100%;
+    padding: 0 20px; /* Adiciona algum preenchimento nas laterais */
     box-sizing: border-box;
+margin-top: 150px;
+margin-bottom: 50px;
   }
   
-  button {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    font-size: 20px;
-    cursor: pointer;
-    border-radius: 50%;
-  }
-  
-  button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-  
-  /* Responsividade */
-  @media (max-width: 768px) {
-    .card3 img {
-      height: 200px;
-    }
-  }
-  
-
-    
-
+  .slider .card2 img {
+    width: 100px;
+    margin-bottom:0px; 
+}
 
 /* APENAS EFEITOS */
 
@@ -509,64 +493,94 @@ margin-top: -60px;
 
 /* Responsividade */
 @media (max-width: 768px) {
-
-    body::before {
-    width: 1000px;
-}
-
-
-
+    /* NAVBAR */
     nav {
-        display: flex;
+        width: 90%;
+        height: auto;
         flex-direction: column;
-        height: 300px;
-        width: 30%;
         gap: 10px;
-
-    }
-
-    #github-logo {
-        margin-top: -20px;
-        margin-right: -5px;
+        padding: 10px 0;
     }
 
     #meu-nome {
-margin-bottom: -20px;
-        margin-left: 2px;
-        font-size: 20px
+        font-size: 18px;
+        margin: 0;
     }
 
+    #soft-skills,
+    #hard-skills,
+    #projetos {
+        font-size: 16px;
+    }
 
+    #github-logo {
+        margin: 0;
+        width: 35px;
+    }
+
+    /* SOBRE MIM */
+    .sobre-mim-container {
+        flex-direction: column;
+        align-items: center;
+        margin-top: -10px;
+    }
+
+    #minha-imagem {
+        margin-top: -100px;
+        max-width: 60%;
+        margin: 30px 0;
+    }
+
+    #sobre-mim-texto {
+        font-size: 18px;
+        margin: 0;
+        text-align: center;
+    }
 
     #sobre-mim h2 {
-        margin-top: -100px;
-        font-size: 50px;
-        margin-bottom: 200px;
-
+        font-size: 36px;
+        text-align: center;
     }
 
-#sobre-mim-texto {
-   text-align: left;
-   white-space: normal;
-   font-size: 20px;
-   margin-bottom: 120px;
-   line-height: 1.5;
-   width: 100%;
-   margin-right: -10px;
-    
-}
+    /* WHATSAPP BUTTON */
+    .whatsapp-button-border {
+        top: -30px;
+        font-size: 14px;
+        padding: 8px 16px;
+    }
 
+    /* SEÇÃO SOFT SKILLS */
+    #minhas-soft-skills h2,
+    #minhas-hard-skills h2,
+    #meus-projetos h2 {
+        font-size: 36px;
+        margin-left: 0;
+    }
 
+    .card,
+    .card2 {
+        width: 90%;
+        padding: 30px 20px;
+    }
 
-#minha-imagem {
-height: auto;
-width: 800px;
+    .card h3,
+    .card2 h3 {
+        font-size: 20px;
+    }
 
-}
+    .card p,
+    .card2 p {
+        font-size: 14px;
+    }
 
-.card-pai {
+    .card2 img {
+        width: 40px;
+        margin-bottom: 20px;
+    }
 
-    gap: 30px;
-}
+    button {
+        padding: 8px;
+        font-size: 16px;
+    }
 }
 
